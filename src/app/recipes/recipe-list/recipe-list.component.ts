@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 import { Recipe } from '../recipe.model';
 
@@ -7,11 +7,21 @@ import { Recipe } from '../recipe.model';
   templateUrl: './recipe-list.component.html',
   styles: ['../../styles.css']
 })
-export class RecipeListComponent {
+
+export class RecipeListComponent{
+
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
   //assigning the variable to type Recipe, and the brackets indicate it's an array
   recipes: Recipe[] = [
     new Recipe('Tomato Soup', 'A creamy tomato soup that goes perfectly with grilled cheese', 'http://www.harvesttotable.com/wp-content/uploads/2007/09/Tomato-soup-with-basil.jpg'),
     new Recipe('Cereal', "Lazy Man's Feast", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Froot-Loops-Cereal-Bowl.jpg/220px-Froot-Loops-Cereal-Bowl.jpg")
   ];
+
+  constructor() {}
+
+
+  onRecipeSelected(recipe: Recipe){
+    this.recipeWasSelected.emit(recipe)
+  }
 
 }

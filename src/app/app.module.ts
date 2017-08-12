@@ -7,7 +7,7 @@ import { ShoppingListComponent } from './list/shopping-list/shopping-list.compon
 import { ShoppingListEditComponent } from './list/shopping-list-edit/shopping-list-edit.component';
 import { RecipeComponent } from './recipes/recipe.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './recipes/recipe-item/recipe-item.component';
+import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 
 @NgModule({
